@@ -51,19 +51,19 @@ import cz.tomascejka.learn.jta.playing.JtaTransactionTemplate;
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.BEAN)
-public class JtaTransactionManagerEjb implements JtaTransactionManager {
+public class JtaTransactionManagerBMT implements JtaTransactionManager {
 	
-	private static final Logger LOG = LoggerFactory.getLogger(JtaTransactionManagerEjb.class);
+	private static final Logger LOG = LoggerFactory.getLogger(JtaTransactionManagerBMT.class);
 	
 	@Resource
 	private EJBContext context;
 
 	@Override
 	public void doInTransaction(JtaTransactionTemplate template) throws Exception {
-		UserTransaction utx = context.getUserTransaction();
+		UserTransaction utx = getUserTransaction();
 		try {
-			utx.begin();
 			LOG.info("[{}] BEGIN JTA transaction", template);
+			utx.begin();
 			template.invoke();// ..invoke multiples of em.persists(), em.merge() or em.remove()
 			utx.commit();
 			LOG.info("[{}] COMMIT JTA transaction", template);
@@ -76,5 +76,12 @@ public class JtaTransactionManagerEjb implements JtaTransactionManager {
 		} finally {
 			LOG.info("[{}] END invocation", template);
 		}
+	}
+	
+	/**
+	 * @return JTA user transaction for manually processing begin/commit methods
+	 */
+	protected UserTransaction getUserTransaction(){
+		return context.getUserTransaction();
 	}
 }
