@@ -1,7 +1,6 @@
 package cz.tomascejka.learn.jta.playing.manager.impl;
 
 import javax.annotation.Resource;
-import javax.ejb.EJBContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -21,8 +20,6 @@ public class JtaTransactionManagerCMT implements JtaTransactionManager {
 
 	private static final Logger LOG = LoggerFactory.getLogger(JtaTransactionManagerCMT.class);
 	
-	@Resource
-	private EJBContext context;
 	@Resource
 	private TransactionSynchronizationRegistry txReg;
 	
