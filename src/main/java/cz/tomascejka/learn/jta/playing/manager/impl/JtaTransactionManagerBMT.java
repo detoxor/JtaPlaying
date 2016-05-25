@@ -1,4 +1,4 @@
-package cz.tomascejka.learn.jta.playing.impl;
+package cz.tomascejka.learn.jta.playing.manager.impl;
 
 import javax.annotation.Resource;
 import javax.ejb.EJBContext;
@@ -10,8 +10,8 @@ import javax.transaction.UserTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.tomascejka.learn.jta.playing.JtaTransactionManager;
-import cz.tomascejka.learn.jta.playing.JtaTransactionTemplate;
+import cz.tomascejka.learn.jta.playing.manager.JtaTransactionManager;
+import cz.tomascejka.learn.jta.playing.manager.JtaTransactionTemplate;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package cz.tomascejka.learn.jta.playing;
+package cz.tomascejka.learn.jta.playing.manager;
 
 /**
  * Block of code is executed between start/commit of JTA transaction

@@ -1,4 +1,4 @@
-package cz.tomascejka.learn.jta.playing.impl;
+package cz.tomascejka.learn.jta.playing.manager.impl;
 
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
@@ -10,9 +10,10 @@ import javax.transaction.UserTransaction;
 import org.junit.Before;
 import org.junit.Test;
 
-import cz.tomascejka.learn.jta.playing.JtaTransactionTemplate;
+import cz.tomascejka.learn.jta.playing.manager.JtaTransactionTemplate;
+import cz.tomascejka.learn.jta.playing.manager.impl.JtaTransactionManagerBMT;
 
-public class JtaTransactionManagerEjbTest {
+public class JtaTransactionManagerBMTTest {
 
 	private JtaTransactionManagerBMT tested;
 	private UserTransaction utx = new UserTransaction() {

@@ -1,4 +1,4 @@
-package cz.tomascejka.learn.jta.playing;
+package cz.tomascejka.learn.jta.playing.manager;
 
 /**
  * High level interface for processing JTA transaction
