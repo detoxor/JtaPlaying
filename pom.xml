@@ -31,10 +31,35 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+<dependency>
+	<groupId>org.bitbucket.dollar</groupId>
+	<artifactId>dollar</artifactId>
+	<version>1.0-beta3</version>
+</dependency>
+		<!-- dependency>
+			<groupId>org.jboss.narayana.jts</groupId>
+			<artifactId>narayana-jts-jacorb</artifactId>
+			<version>5.3.2.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.narayana.jts</groupId>
+			<artifactId>narayana-jts-integration</artifactId>
+			<version>5.3.2.Final</version>
+		</dependency-->
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 			<!-- http://mvnrepository.com/artifact/org.wildfly.plugins/wildfly-maven-plugin -->
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
